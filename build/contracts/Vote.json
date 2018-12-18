@@ -3,12 +3,25 @@
   "abi": [
     {
       "constant": true,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
       "name": "restaurant",
       "outputs": [
         {
-          "name": "",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "name",
           "type": "string"
+        },
+        {
+          "name": "voteCount",
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -16,26 +29,43 @@
       "type": "function"
     },
     {
+      "constant": true,
       "inputs": [],
+      "name": "restaurantCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "VoteFunc",
+      "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor"
+      "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506040805190810160405280600c81526020017f52657374617572616e74203100000000000000000000000000000000000000008152506000908051906020019061005c929190610062565b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b6101a0806101166000396000f300608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063ed16805814610046575b600080fd5b34801561005257600080fd5b5061005b6100d6565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009b578082015181840152602081019050610080565b50505050905090810190601f1680156100c85780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016c5780601f106101415761010080835404028352916020019161016c565b820191906000526020600020905b81548152906001019060200180831161014f57829003601f168201915b5050505050815600a165627a7a7230582060031c2bd766dcc6a108c4b63a14de92f4143932ec5c3641b7f59b9346482f1c0029",
-  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063ed16805814610046575b600080fd5b34801561005257600080fd5b5061005b6100d6565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009b578082015181840152602081019050610080565b50505050905090810190601f1680156100c85780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016c5780601f106101415761010080835404028352916020019161016c565b820191906000526020600020905b81548152906001019060200180831161014f57829003601f168201915b5050505050815600a165627a7a7230582060031c2bd766dcc6a108c4b63a14de92f4143932ec5c3641b7f59b9346482f1c0029",
-  "sourceMap": "26:125:1:-;;;82:67;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:67:1;115:27;;;;;;;;;;;;;;;;;;:10;:27;;;;;;;;;;;;:::i;:::-;;26:125;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "26:125:1:-;;;;;;;;;;;;;;;;;;;;;;;;51:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;51:24:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;51:24:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.11;\n\ncontract Vote {\n    \n    string public restaurant;\n\n    function Vote () public{\n        restaurant = \"Restaurant 1\";\n    }\n}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061049f806100206000396000f300608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806319bedf2c1461005c5780638270e56614610073578063b11b91e614610127575b600080fd5b34801561006857600080fd5b50610071610152565b005b34801561007f57600080fd5b5061009e6004803603810190808035906020019092919050505061028a565b6040518084815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b838110156100ea5780820151818401526020810190506100cf565b50505050905090810190601f1680156101175780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561013357600080fd5b5061013c61034c565b6040518082815260200191505060405180910390f35b6101906040805190810160405280600c81526020017f52657374617572616e7420310000000000000000000000000000000000000000815250610352565b6101ce6040805190810160405280600c81526020017f52657374617572616e7420320000000000000000000000000000000000000000815250610352565b61020c6040805190810160405280600c81526020017f52657374617572616e7420330000000000000000000000000000000000000000815250610352565b61024a6040805190810160405280600c81526020017f52657374617572616e7420340000000000000000000000000000000000000000815250610352565b6102886040805190810160405280600c81526020017f52657374617572616e7420350000000000000000000000000000000000000000815250610352565b565b6000602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561033c5780601f106103115761010080835404028352916020019161033c565b820191906000526020600020905b81548152906001019060200180831161031f57829003601f168201915b5050505050908060020154905083565b60015481565b6001600081548092919060010191905055506060604051908101604052806001548152602001828152602001600081525060008060015481526020019081526020016000206000820151816000015560208201518160010190805190602001906103bd9291906103ce565b506040820151816002015590505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040f57805160ff191683800117855561043d565b8280016001018555821561043d579182015b8281111561043c578251825591602001919060010190610421565b5b50905061044a919061044e565b5090565b61047091905b8082111561046c576000816000905550600101610454565b5090565b905600a165627a7a72305820e6273267e84bb473124ff413c62c6e34f15070cc3323dab10f0061e454114cb50029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806319bedf2c1461005c5780638270e56614610073578063b11b91e614610127575b600080fd5b34801561006857600080fd5b50610071610152565b005b34801561007f57600080fd5b5061009e6004803603810190808035906020019092919050505061028a565b6040518084815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b838110156100ea5780820151818401526020810190506100cf565b50505050905090810190601f1680156101175780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561013357600080fd5b5061013c61034c565b6040518082815260200191505060405180910390f35b6101906040805190810160405280600c81526020017f52657374617572616e7420310000000000000000000000000000000000000000815250610352565b6101ce6040805190810160405280600c81526020017f52657374617572616e7420320000000000000000000000000000000000000000815250610352565b61020c6040805190810160405280600c81526020017f52657374617572616e7420330000000000000000000000000000000000000000815250610352565b61024a6040805190810160405280600c81526020017f52657374617572616e7420340000000000000000000000000000000000000000815250610352565b6102886040805190810160405280600c81526020017f52657374617572616e7420350000000000000000000000000000000000000000815250610352565b565b6000602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561033c5780601f106103115761010080835404028352916020019161033c565b820191906000526020600020905b81548152906001019060200180831161031f57829003601f168201915b5050505050908060020154905083565b60015481565b6001600081548092919060010191905055506060604051908101604052806001548152602001828152602001600081525060008060015481526020019081526020016000206000820151816000015560208201518160010190805190602001906103bd9291906103ce565b506040820151816002015590505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040f57805160ff191683800117855561043d565b8280016001018555821561043d579182015b8281111561043c578251825591602001919060010190610421565b5b50905061044a919061044e565b5090565b61047091905b8082111561046c576000816000905550600101610454565b5090565b905600a165627a7a72305820e6273267e84bb473124ff413c62c6e34f15070cc3323dab10f0061e454114cb50029",
+  "sourceMap": "26:706:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:706:1;;;;;;;",
+  "deployedSourceMap": "26:706:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;322:238;;8:9:-1;5:2;;;30:1;27;20:12;5:2;322:238:1;;;;;;207:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;207:45:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;207:45:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;287:27;;8:9:-1;5:2;;;30:1;27;20:12;5:2;287:27:1;;;;;;;;;;;;;;;;;;;;;;;322:238;359:29;;;;;;;;;;;;;;;;;;;:13;:29::i;:::-;398;;;;;;;;;;;;;;;;;;;:13;:29::i;:::-;437;;;;;;;;;;;;;;;;;;;:13;:29::i;:::-;476;;;;;;;;;;;;;;;;;;;:13;:29::i;:::-;515;;;;;;;;;;;;;;;;;;;:13;:29::i;:::-;322:238::o;207:45::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;287:27::-;;;;:::o;566:164::-;629:15;;:17;;;;;;;;;;;;;686:37;;;;;;;;;697:15;;686:37;;;;714:5;686:37;;;;721:1;686:37;;;656:10;:27;667:15;;656:27;;;;;;;;;;;:67;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;566:164;:::o;26:706::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.24;\n\ncontract Vote {\n    \n    // Restaurant Object\n    struct Restaurant {\n        uint id;\n        string name;\n        uint voteCount;\n    }\n\n    // Store Data\n\n\n    // Fetch Data\n    mapping(uint => Restaurant) public restaurant;\n\n    // Number of restaurant\n    uint public restaurantCount;\n\n\n    function VoteFunc () public{\n        addRestaurant(\"Restaurant 1\");\n        addRestaurant(\"Restaurant 2\");\n        addRestaurant(\"Restaurant 3\");\n        addRestaurant(\"Restaurant 4\");\n        addRestaurant(\"Restaurant 5\");\n        \n    }\n\n    function addRestaurant (string memory _name) private {\n        restaurantCount++;\n        restaurant[restaurantCount] = Restaurant(restaurantCount, _name, 0);\n    }\n}",
   "sourcePath": "/Users/chanchunhin/Documents/Coding/dapp/vote/contracts/Vote.sol",
   "ast": {
     "absolutePath": "/Users/chanchunhin/Documents/Coding/dapp/vote/contracts/Vote.sol",
     "exportedSymbols": {
       "Vote": [
-        69
+        115
       ]
     },
-    "id": 70,
+    "id": 116,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -44,7 +74,7 @@
           "solidity",
           "^",
           "0.4",
-          ".11"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:1"
@@ -55,34 +85,170 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 69,
+        "id": 115,
         "linearizedBaseContracts": [
-          69
+          115
         ],
         "name": "Vote",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
+            "canonicalName": "Vote.Restaurant",
+            "id": 65,
+            "members": [
+              {
+                "constant": false,
+                "id": 60,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 65,
+                "src": "104:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 59,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "104:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 62,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 65,
+                "src": "121:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 61,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "121:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 64,
+                "name": "voteCount",
+                "nodeType": "VariableDeclaration",
+                "scope": 65,
+                "src": "142:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 63,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "142:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Restaurant",
+            "nodeType": "StructDefinition",
+            "scope": 115,
+            "src": "76:87:1",
+            "visibility": "public"
+          },
+          {
             "constant": false,
-            "id": 60,
+            "id": 69,
             "name": "restaurant",
             "nodeType": "VariableDeclaration",
-            "scope": 69,
-            "src": "51:24:1",
+            "scope": 115,
+            "src": "207:45:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_string_storage",
-              "typeString": "string"
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Restaurant_$65_storage_$",
+              "typeString": "mapping(uint256 => struct Vote.Restaurant)"
             },
             "typeName": {
-              "id": 59,
-              "name": "string",
-              "nodeType": "ElementaryTypeName",
-              "src": "51:6:1",
+              "id": 68,
+              "keyType": {
+                "id": 66,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "215:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "207:27:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_string_storage_ptr",
-                "typeString": "string"
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Restaurant_$65_storage_$",
+                "typeString": "mapping(uint256 => struct Vote.Restaurant)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 67,
+                "name": "Restaurant",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 65,
+                "src": "223:10:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Restaurant_$65_storage_ptr",
+                  "typeString": "struct Vote.Restaurant"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 71,
+            "name": "restaurantCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 115,
+            "src": "287:27:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 70,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "287:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
               }
             },
             "value": null,
@@ -90,105 +256,593 @@
           },
           {
             "body": {
-              "id": 67,
+              "id": 94,
               "nodeType": "Block",
-              "src": "105:44:1",
+              "src": "349:211:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 65,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742031",
+                        "id": 75,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "373:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_515400b2c842526316453f2af917a070f92082ed362c8e3667a9e0960f5b48ab",
+                          "typeString": "literal_string \"Restaurant 1\""
+                        },
+                        "value": "Restaurant 1"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_515400b2c842526316453f2af917a070f92082ed362c8e3667a9e0960f5b48ab",
+                          "typeString": "literal_string \"Restaurant 1\""
+                        }
+                      ],
+                      "id": 74,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "359:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 76,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "359:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 77,
+                  "nodeType": "ExpressionStatement",
+                  "src": "359:29:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742032",
+                        "id": 79,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "412:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_edfc8c84aeb68754f2fe34a6c1b71c4f79cf6f0b0c9f27311a9d6e820b42dad2",
+                          "typeString": "literal_string \"Restaurant 2\""
+                        },
+                        "value": "Restaurant 2"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_edfc8c84aeb68754f2fe34a6c1b71c4f79cf6f0b0c9f27311a9d6e820b42dad2",
+                          "typeString": "literal_string \"Restaurant 2\""
+                        }
+                      ],
+                      "id": 78,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "398:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 80,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "398:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 81,
+                  "nodeType": "ExpressionStatement",
+                  "src": "398:29:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742033",
+                        "id": 83,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "451:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b0f7138df93e6f5a6611cdd9018a8eba15b9c2d23151f2b18f591dbc045bd9a0",
+                          "typeString": "literal_string \"Restaurant 3\""
+                        },
+                        "value": "Restaurant 3"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_b0f7138df93e6f5a6611cdd9018a8eba15b9c2d23151f2b18f591dbc045bd9a0",
+                          "typeString": "literal_string \"Restaurant 3\""
+                        }
+                      ],
+                      "id": 82,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "437:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 84,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "437:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 85,
+                  "nodeType": "ExpressionStatement",
+                  "src": "437:29:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742034",
+                        "id": 87,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "490:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_94d922f0b1f26638fcc31048fab0340338a23de91395c174611a383346c411c5",
+                          "typeString": "literal_string \"Restaurant 4\""
+                        },
+                        "value": "Restaurant 4"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_94d922f0b1f26638fcc31048fab0340338a23de91395c174611a383346c411c5",
+                          "typeString": "literal_string \"Restaurant 4\""
+                        }
+                      ],
+                      "id": 86,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "476:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 88,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "476:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 89,
+                  "nodeType": "ExpressionStatement",
+                  "src": "476:29:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742035",
+                        "id": 91,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "529:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_191d51f86483bc91bd62bc85d7ab6537edefc5714f03c1b2bfb7e06a39a32e4a",
+                          "typeString": "literal_string \"Restaurant 5\""
+                        },
+                        "value": "Restaurant 5"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_191d51f86483bc91bd62bc85d7ab6537edefc5714f03c1b2bfb7e06a39a32e4a",
+                          "typeString": "literal_string \"Restaurant 5\""
+                        }
+                      ],
+                      "id": 90,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "515:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 92,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "515:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 93,
+                  "nodeType": "ExpressionStatement",
+                  "src": "515:29:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 95,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "VoteFunc",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 72,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "340:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 73,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "349:0:1"
+            },
+            "scope": 115,
+            "src": "322:238:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 113,
+              "nodeType": "Block",
+              "src": "619:111:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 101,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "629:17:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 100,
+                      "name": "restaurantCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 71,
+                      "src": "629:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 102,
+                  "nodeType": "ExpressionStatement",
+                  "src": "629:17:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 111,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 63,
-                      "name": "restaurant",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 60,
-                      "src": "115:10:1",
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 103,
+                        "name": "restaurant",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 69,
+                        "src": "656:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Restaurant_$65_storage_$",
+                          "typeString": "mapping(uint256 => struct Vote.Restaurant storage ref)"
+                        }
+                      },
+                      "id": 105,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 104,
+                        "name": "restaurantCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 71,
+                        "src": "667:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "656:27:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_string_storage",
-                        "typeString": "string storage ref"
+                        "typeIdentifier": "t_struct$_Restaurant_$65_storage",
+                        "typeString": "struct Vote.Restaurant storage ref"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "52657374617572616e742031",
-                      "id": 64,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 107,
+                          "name": "restaurantCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 71,
+                          "src": "697:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 108,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 97,
+                          "src": "714:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 109,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "721:1:1",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 106,
+                        "name": "Restaurant",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 65,
+                        "src": "686:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Restaurant_$65_storage_ptr_$",
+                          "typeString": "type(struct Vote.Restaurant storage pointer)"
+                        }
+                      },
+                      "id": 110,
                       "isConstant": false,
                       "isLValue": false,
-                      "isPure": true,
-                      "kind": "string",
+                      "isPure": false,
+                      "kind": "structConstructorCall",
                       "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "128:14:1",
-                      "subdenomination": null,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "686:37:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_stringliteral_515400b2c842526316453f2af917a070f92082ed362c8e3667a9e0960f5b48ab",
-                        "typeString": "literal_string \"Restaurant 1\""
-                      },
-                      "value": "Restaurant 1"
+                        "typeIdentifier": "t_struct$_Restaurant_$65_memory",
+                        "typeString": "struct Vote.Restaurant memory"
+                      }
                     },
-                    "src": "115:27:1",
+                    "src": "656:67:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage",
-                      "typeString": "string storage ref"
+                      "typeIdentifier": "t_struct$_Restaurant_$65_storage",
+                      "typeString": "struct Vote.Restaurant storage ref"
                     }
                   },
-                  "id": 66,
+                  "id": 112,
                   "nodeType": "ExpressionStatement",
-                  "src": "115:27:1"
+                  "src": "656:67:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 68,
+            "id": 114,
             "implemented": true,
-            "isConstructor": true,
+            "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [],
-            "name": "Vote",
+            "name": "addRestaurant",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 61,
+              "id": 98,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "96:2:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 97,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "590:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 96,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "590:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "589:21:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 62,
+              "id": 99,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "105:0:1"
+              "src": "619:0:1"
             },
-            "scope": 69,
-            "src": "82:67:1",
+            "scope": 115,
+            "src": "566:164:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "private"
           }
         ],
-        "scope": 70,
-        "src": "26:125:1"
+        "scope": 116,
+        "src": "26:706:1"
       }
     ],
-    "src": "0:151:1"
+    "src": "0:732:1"
   },
   "legacyAST": {
     "absolutePath": "/Users/chanchunhin/Documents/Coding/dapp/vote/contracts/Vote.sol",
     "exportedSymbols": {
       "Vote": [
-        69
+        115
       ]
     },
-    "id": 70,
+    "id": 116,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -197,7 +851,7 @@
           "solidity",
           "^",
           "0.4",
-          ".11"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:24:1"
@@ -208,34 +862,170 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 69,
+        "id": 115,
         "linearizedBaseContracts": [
-          69
+          115
         ],
         "name": "Vote",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
+            "canonicalName": "Vote.Restaurant",
+            "id": 65,
+            "members": [
+              {
+                "constant": false,
+                "id": 60,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 65,
+                "src": "104:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 59,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "104:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 62,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 65,
+                "src": "121:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 61,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "121:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 64,
+                "name": "voteCount",
+                "nodeType": "VariableDeclaration",
+                "scope": 65,
+                "src": "142:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 63,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "142:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Restaurant",
+            "nodeType": "StructDefinition",
+            "scope": 115,
+            "src": "76:87:1",
+            "visibility": "public"
+          },
+          {
             "constant": false,
-            "id": 60,
+            "id": 69,
             "name": "restaurant",
             "nodeType": "VariableDeclaration",
-            "scope": 69,
-            "src": "51:24:1",
+            "scope": 115,
+            "src": "207:45:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_string_storage",
-              "typeString": "string"
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Restaurant_$65_storage_$",
+              "typeString": "mapping(uint256 => struct Vote.Restaurant)"
             },
             "typeName": {
-              "id": 59,
-              "name": "string",
-              "nodeType": "ElementaryTypeName",
-              "src": "51:6:1",
+              "id": 68,
+              "keyType": {
+                "id": 66,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "215:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "207:27:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_string_storage_ptr",
-                "typeString": "string"
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Restaurant_$65_storage_$",
+                "typeString": "mapping(uint256 => struct Vote.Restaurant)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 67,
+                "name": "Restaurant",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 65,
+                "src": "223:10:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Restaurant_$65_storage_ptr",
+                  "typeString": "struct Vote.Restaurant"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 71,
+            "name": "restaurantCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 115,
+            "src": "287:27:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 70,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "287:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
               }
             },
             "value": null,
@@ -243,96 +1033,584 @@
           },
           {
             "body": {
-              "id": 67,
+              "id": 94,
               "nodeType": "Block",
-              "src": "105:44:1",
+              "src": "349:211:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 65,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742031",
+                        "id": 75,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "373:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_515400b2c842526316453f2af917a070f92082ed362c8e3667a9e0960f5b48ab",
+                          "typeString": "literal_string \"Restaurant 1\""
+                        },
+                        "value": "Restaurant 1"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_515400b2c842526316453f2af917a070f92082ed362c8e3667a9e0960f5b48ab",
+                          "typeString": "literal_string \"Restaurant 1\""
+                        }
+                      ],
+                      "id": 74,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "359:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 76,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "359:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 77,
+                  "nodeType": "ExpressionStatement",
+                  "src": "359:29:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742032",
+                        "id": 79,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "412:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_edfc8c84aeb68754f2fe34a6c1b71c4f79cf6f0b0c9f27311a9d6e820b42dad2",
+                          "typeString": "literal_string \"Restaurant 2\""
+                        },
+                        "value": "Restaurant 2"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_edfc8c84aeb68754f2fe34a6c1b71c4f79cf6f0b0c9f27311a9d6e820b42dad2",
+                          "typeString": "literal_string \"Restaurant 2\""
+                        }
+                      ],
+                      "id": 78,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "398:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 80,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "398:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 81,
+                  "nodeType": "ExpressionStatement",
+                  "src": "398:29:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742033",
+                        "id": 83,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "451:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b0f7138df93e6f5a6611cdd9018a8eba15b9c2d23151f2b18f591dbc045bd9a0",
+                          "typeString": "literal_string \"Restaurant 3\""
+                        },
+                        "value": "Restaurant 3"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_b0f7138df93e6f5a6611cdd9018a8eba15b9c2d23151f2b18f591dbc045bd9a0",
+                          "typeString": "literal_string \"Restaurant 3\""
+                        }
+                      ],
+                      "id": 82,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "437:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 84,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "437:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 85,
+                  "nodeType": "ExpressionStatement",
+                  "src": "437:29:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742034",
+                        "id": 87,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "490:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_94d922f0b1f26638fcc31048fab0340338a23de91395c174611a383346c411c5",
+                          "typeString": "literal_string \"Restaurant 4\""
+                        },
+                        "value": "Restaurant 4"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_94d922f0b1f26638fcc31048fab0340338a23de91395c174611a383346c411c5",
+                          "typeString": "literal_string \"Restaurant 4\""
+                        }
+                      ],
+                      "id": 86,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "476:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 88,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "476:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 89,
+                  "nodeType": "ExpressionStatement",
+                  "src": "476:29:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52657374617572616e742035",
+                        "id": 91,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "529:14:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_191d51f86483bc91bd62bc85d7ab6537edefc5714f03c1b2bfb7e06a39a32e4a",
+                          "typeString": "literal_string \"Restaurant 5\""
+                        },
+                        "value": "Restaurant 5"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_191d51f86483bc91bd62bc85d7ab6537edefc5714f03c1b2bfb7e06a39a32e4a",
+                          "typeString": "literal_string \"Restaurant 5\""
+                        }
+                      ],
+                      "id": 90,
+                      "name": "addRestaurant",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "515:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 92,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "515:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 93,
+                  "nodeType": "ExpressionStatement",
+                  "src": "515:29:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 95,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "VoteFunc",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 72,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "340:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 73,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "349:0:1"
+            },
+            "scope": 115,
+            "src": "322:238:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 113,
+              "nodeType": "Block",
+              "src": "619:111:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 101,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "629:17:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 100,
+                      "name": "restaurantCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 71,
+                      "src": "629:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 102,
+                  "nodeType": "ExpressionStatement",
+                  "src": "629:17:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 111,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 63,
-                      "name": "restaurant",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 60,
-                      "src": "115:10:1",
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 103,
+                        "name": "restaurant",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 69,
+                        "src": "656:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Restaurant_$65_storage_$",
+                          "typeString": "mapping(uint256 => struct Vote.Restaurant storage ref)"
+                        }
+                      },
+                      "id": 105,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 104,
+                        "name": "restaurantCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 71,
+                        "src": "667:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "656:27:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_string_storage",
-                        "typeString": "string storage ref"
+                        "typeIdentifier": "t_struct$_Restaurant_$65_storage",
+                        "typeString": "struct Vote.Restaurant storage ref"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "52657374617572616e742031",
-                      "id": 64,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 107,
+                          "name": "restaurantCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 71,
+                          "src": "697:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 108,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 97,
+                          "src": "714:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 109,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "721:1:1",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 106,
+                        "name": "Restaurant",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 65,
+                        "src": "686:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Restaurant_$65_storage_ptr_$",
+                          "typeString": "type(struct Vote.Restaurant storage pointer)"
+                        }
+                      },
+                      "id": 110,
                       "isConstant": false,
                       "isLValue": false,
-                      "isPure": true,
-                      "kind": "string",
+                      "isPure": false,
+                      "kind": "structConstructorCall",
                       "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "128:14:1",
-                      "subdenomination": null,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "686:37:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_stringliteral_515400b2c842526316453f2af917a070f92082ed362c8e3667a9e0960f5b48ab",
-                        "typeString": "literal_string \"Restaurant 1\""
-                      },
-                      "value": "Restaurant 1"
+                        "typeIdentifier": "t_struct$_Restaurant_$65_memory",
+                        "typeString": "struct Vote.Restaurant memory"
+                      }
                     },
-                    "src": "115:27:1",
+                    "src": "656:67:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage",
-                      "typeString": "string storage ref"
+                      "typeIdentifier": "t_struct$_Restaurant_$65_storage",
+                      "typeString": "struct Vote.Restaurant storage ref"
                     }
                   },
-                  "id": 66,
+                  "id": 112,
                   "nodeType": "ExpressionStatement",
-                  "src": "115:27:1"
+                  "src": "656:67:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 68,
+            "id": 114,
             "implemented": true,
-            "isConstructor": true,
+            "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [],
-            "name": "Vote",
+            "name": "addRestaurant",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 61,
+              "id": 98,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "96:2:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 97,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "590:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 96,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "590:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "589:21:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 62,
+              "id": 99,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "105:0:1"
+              "src": "619:0:1"
             },
-            "scope": 69,
-            "src": "82:67:1",
+            "scope": 115,
+            "src": "566:164:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "private"
           }
         ],
-        "scope": 70,
-        "src": "26:125:1"
+        "scope": 116,
+        "src": "26:706:1"
       }
     ],
-    "src": "0:151:1"
+    "src": "0:732:1"
   },
   "compiler": {
     "name": "solc",
@@ -343,9 +1621,9 @@
       "events": {},
       "links": {},
       "address": "0x0612b246b002e837e6b33e397b0a84b4a03425c2",
-      "transactionHash": "0x0f686de08023cd441d0abbe80ccf2c42fd0d09d65ad07ef3e78fe49efec9eae5"
+      "transactionHash": "0x2151115e4f88517344d0a20f048c695fa1eda89088f7862d71938deda59d855f"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-12-16T14:49:50.537Z"
+  "updatedAt": "2018-12-17T14:47:37.854Z"
 }
